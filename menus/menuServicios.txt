@@ -1,0 +1,9 @@
+~~~~~~ 1. Administrar Servicios ~~~~~~
+
+~~~  1. SSH   ~~~
+~~   2. MYSQL  ~~
+~~   0. Volver ~~
+
+~~~~~~ 2. Administrar Usuarios  ~~~~~~
+~~~~~~ 3. Administrar Grupos    ~~~~~~
+~~~~~~ 4. Administrar Respaldos ~~~~~~

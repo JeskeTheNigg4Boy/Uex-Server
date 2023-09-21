@@ -1,0 +1,12 @@
+~~~~~~ 1. Administrar Servicios ~~~~~~
+~~~~~~ 2. Administrar Usuarios  ~~~~~~
+~~~~~~ 3. Administrar Grupos    ~~~~~~
+
+~~~  1. Añadir Grupo      ~~~
+~~~  2. Listar Grupo      ~~~
+~~~  3. Añadir Usuario    ~~~
+~~~  4. Eliminar Usuario  ~~~
+~~   5. Eliminar Grupo    ~~~
+~~   0. Volver             ~~
+
+~~~~~~ 4. Administrar Respaldos ~~~~~~
