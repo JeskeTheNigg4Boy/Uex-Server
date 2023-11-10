@@ -100,5 +100,22 @@ folder_exists() {
         fi
 }
 
+ping_swap() {
+    IPTABLES_FILE="/ruta/al/archivo/iptables.conf"
 
-
+    if grep -qE "^-A INPUT -p icmp -j ACCEPT" "$IPTABLES_FILE"; then
+        sed -i 's/^-A INPUT -p icmp -j ACCEPT/#-A INPUT -p icmp -j ACCEPT/' "$IPTABLES_FILE"
+        echo "La regla de habilitar ping se ha deshabilitado."
+    else
+        sed -i 's/#-A INPUT -p icmp -j ACCEPT/-A INPUT -p icmp -j ACCEPT/' "$IPTABLES_FILE"
+        echo "La regla de habilitar ping se ha habilitado."
+    fi
+}
+verificar_montaje() {
+    if mountpoint -q /var/mysql; then
+        nombre_disco=$(df -h /var/mysql | awk 'NR==2 {print $1}' | awk -F/ '{print $3}')
+        echo "El disco "$nombre_disco" esta montado en /var/mysql."
+    else
+        echo "El disco no esta montado en /var/mysql."
+    fi
+}

@@ -7,8 +7,8 @@ function importar_database(){
 	echo "MySQL no está activado. Por favor, asegúrate de que el servicio esté en ejecución antes de continuar."
         return 1
     fi
-	echo "Archivos en /var/mysql:"
-    ls /var/mysql
+	echo "Archivos en /var/mysql/DBuser:"
+    ls /var/mysql/DBuser
 
     while true; do
         read -p "Ingresa el nombre de la base de datos que deseas crear (o presiona Enter para salir): " nombre_base_datos

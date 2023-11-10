@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# Función para realizar el respaldo de usuarios
+backup_usuarios() {
+    # Ruta de destino para los backups
+	ruta_destino_back="/var/backups/"
+    ruta_destino_user="/var/backups/uex-user/user"
+   ruta_destino_pass="/var/backups/uex-user/pass"
+    # Obtener la hora actual en formato YYYY-MM-DD_HH-MM-SS
+    hora_actual=$(date +"%Y-%m-%d_%H-%M-%S")
+
+    # Copiar los archivos passwd y shadow a la ruta de destino con la hora en el nombre
+    cp /etc/passwd "$ruta_destino_user/passwd_backup_$hora_actual"
+    cp /etc/shadow "$ruta_destino_pass/shadow_backup_$hora_actual"
+	echo "Copiando archivos"
+	sleep 1
+    # Cambiar los permisos de los archivos de backup (ajústalos según tus necesidades)
+    chmod 600 "$ruta_destino_user/passwd_backup_$hora_actual"
+    chmod 600 "$ruta_destino_pass/shadow_backup_$hora_actual"
+	echo "Cambiando permisos"	
+sleep 1
+    echo "Backups de usuarios creados exitosamente en $ruta_destino_back"
+}
+
+backup_grupos(){
+	rute_destino_back="/var/backups/"
+	ruta_destino="/var/backups/uex-user/group"
+	hora_actual=$(date +"%Y-%m-%d_%H-%M-%S")
+
+	  cp /etc/group "$ruta_destino/group_backup_$hora_actual"
+	echo "Copiando archivo"
+	sleep 1
+	chmod 600 "$ruta_destino/group_backup_$hora_actual"
+	echo "Cambiando permiso"
+	sleep 1
+	echo "Backup de grupos creado exitosamente en $ruta_destino"
+
+
+}
+
+listar_backups() {
+    ruta_base="/var/backups/uex-user/"
+
+    read -p "Ingrese el número de la opción deseada: " opcion
+
+    case $opcion in
+        1)
+            carpeta="user"
+            ;;
+        2)
+            carpeta="pass"
+            ;;
+        3)
+            carpeta="group"
+            ;;
+        *)
+            echo "Opción inválida."
+            break
+        sleep 1
+            ;;
+    esac
+
+    ruta_backups="$ruta_base/$carpeta"
+        clear
+        sleep 1
+         echo "Archivos de backups en la carpeta $ruta_backups:"
+    ls -l "$ruta_backups" | less
+}
+

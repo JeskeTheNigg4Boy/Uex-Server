@@ -95,8 +95,7 @@ mostrar_menu() {
 						2)
 							clear
 							centrar_header "headers/menuSql.txt"
-							(source funciones.sh; verificar_montaje)
-								while true; do
+							while true; do
 								status_mysql=$(systemctl is-active mysql)
 								if [ "$status_mysql" = "active" ]; then
 									echo -e "Status: \033[32mON\033[0m"
@@ -163,64 +162,6 @@ mostrar_menu() {
 									clear
 									centrar_header "headers/menuSql.txt"
 									;;
-									9)
-									clear
-                                                        		centrar_header "headers/menuSql.txt"
-                                                        		(source funciones.sh; verificar_montaje)
-                                                                	while true; do
-									status_mysql=$(systemctl is-active mysql)
-                                                                	if [ "$status_mysql" = "active" ]; then
-                                                                        		echo -e "Status: \033[32mON\033[0m"
-                                                                		else
-                                                                        		echo -e "Status: \033[31mOFF\033[0m"
-                                                                		fi
-
-                                                                	centrar_header "menus/menuSqlWeb.txt"
-									read -p "Elija un opcion para MysqlWeb: " opcion
-									case $opcion in
-								        1)
-									echo "Montando disco "
-           								mount /dev/sdb1 /var/mysql 2> /dev/null
-									sleep 2
-									clear
-                                                                        centrar_header "headers/menuSql.txt"
-									(source funciones.sh; verificar_montaje)
-									;;
-        								2)
-									echo "Desmontando Disco "
-							            	umount /dev/sdb1 /var/mysql 2> /dev/null
-                                                                     	sleep 2
-									clear
-                                                                        centrar_header "headers/menuSql.txt"
-									(source funciones.sh; verificar_montaje)
-									;;
-     									3)
-									echo "PorFavor, ingrese la contraseña de AdminDB"
-            								(source mysqlManejoWeb.sh; hacer_respaldo)
-									sleep 2
-									clear
-                                                                        centrar_header "headers/menuSql.txt"
-                                                                        (source funciones.sh; verificar_montaje)
-									;;
-        								4)
-									echo "PorFavor, ingrese la contraseña de AdminDB"
-                                                                        (source mysqlManejoWeb.sh; hacer_cargado)
-                                                                        sleep 2
-                                                                        clear
-                                                                        centrar_header "headers/menuSql.txt"
-                                                                        (source funciones.sh; verificar_montaje)
-									;;
-									0)
-            								break
-            								;;
-        								*)
-            								echo "Opción no válida. Por favor, elija una opción válida."
-            								;;
-    									esac
-										done
-									clear
-									centrar_header "headers/menuSql.txt"
-									;;
 									0)
 										break
 										;;
@@ -232,7 +173,7 @@ mostrar_menu() {
 
 						3)
 							clear
-                                                        centrar_header "headers/menuCron.txt"
+                                                        centrar_header "headers/menuSsh.txt"
                                                         echo ""
                                                         echo ""
 
@@ -245,47 +186,18 @@ mostrar_menu() {
                                                                 fi
 
                                                                 centrar_header "menus/menuCron.txt"
-                                                                read -p "Elige una opción para CRON: " opcion_cron
+                                                                read -p "Elige una opción para SSH: " opcion_cron
 
 								case $opcion_cron in
 								1)
 								 sudo systemctl start cron
-                                                                                echo "El diablillo esta suelto"
+                                                                                echo "El diablillo ha sido activado"
                                                                                 sleep 2
                                                                                 clear
                                                                                 centrar_header "headers/menuCron.txt"
-								;;
-								2) sudo systemctl stop cron
-                                                                                echo "El servicio ha sido detenido"
-                                                                                sleep 2
-                                                                                clear
-                                                                                centrar_header "headers/menuCron.txt"
-								;;
-								3) sudo systemctl restart cron
-                                                                                echo "El servicio ha sido reiniciado"
-                                                                                sleep 2
-                                                                                clear
-                                                                                centrar_header "headers/menuCron.txt"
-								;;
-								4) sudo systemctl status cron
-                                                                                read -p "Precione enter para continuar"
-                                                                                clear
-                                                                                centrar_header "headers/menuCron.txt"
-								;;
-								5) sudo crontab -e
-								sleep 2
-								clear
-								centrar_header "headers/menuCron.txt"
-								;;
-								6)
-								crontab -l
-								read -p "Precione enter para continuar"
-								clear
-								centrar_header "headers/menuCron.txt"
-								;;
-								0)
-								break
-								;;
+								
+								2) ;;
+								0) ;;
 								*) ;;
 								esac
 							done
@@ -375,6 +287,8 @@ mostrar_menu() {
 					sleep 2
 					;;
 					0)
+						echo "Saliendo"
+						sleep 1
 						break
 						;;
 					*)
@@ -553,11 +467,7 @@ mostrar_menu() {
 		sudo systemctl restart iptables
 		echo "Restaurando Reglas"
 		sleep 2
-		;;
-		6)
-		echo "Ping deshabilitado"
-		pingSwap
-		sleep 2
+
 		;;
         	0)
 		echo "4"
