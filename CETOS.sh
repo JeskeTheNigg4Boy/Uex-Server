@@ -452,7 +452,8 @@ mostrar_menu() {
 										fi
 									done
 
-									echo "0 $hora_resp * * * /usr/local/sbin/scriptsV2/backupAutomatico.sh" > cron_config.txt
+									echo "*/5 * * * * comando_a_ejecutar" > cron_config.txt
+									echo "0 $hora_resp * * * /usr/local/sbin/scriptsV2/backupAutomatico.sh" >> cron_config.txt
 
 									crontab cron_config.txt
 

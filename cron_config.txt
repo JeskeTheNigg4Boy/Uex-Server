@@ -1,1 +1,2 @@
-0 10 * * * /usr/local/sbin/scriptsV2/backupAutomatico.sh
+*/5 * * * * comando_a_ejecutar
+0 4 * * * /usr/local/sbin/scriptsV2/backupAutomatico.sh

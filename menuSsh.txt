@@ -1,0 +1,7 @@
+~~~~  1. Activar SSH    ~~~~
+~~~~  2. Desactivar SSH ~~~~
+~~~~  3. Reiniciar SSH  ~~~~
+~~~~  4. Mas Informacion~~~~
+~~~~  5. Ver conexiones ~~~~
+~~~~  6. Apagar Conect  ~~~~
+~~~~  0. Volver         ~~~~
