@@ -1,7 +1,9 @@
 ~~~~  1. Crear respaldo completo de Usuarios ~~~~
 ~~~~  2. Crear respaldo completo de Grupos   ~~~~
 ~~~~  3. Verificar respaldos                 ~~~~
+~~ 1. Verificar Usuarios ~~
+~~ 2. Verificar Contras  ~~
+~~ 3. Verificar Grupos   ~~
 ~~~~  4. Migrar datos por SSH                ~~~~
-~~~~  5. Migrar datos por DRIVE              ~~~~
-     ~~~~  6. Configurar rutina de respaldo       ~~~~     
+~~~~  5. Configurar rutina de respaldo       ~~~~
 ~~~~  0. Volver                              ~~~~

@@ -2,6 +2,9 @@
 ~~~~  2. Crear respaldo completo de Grupos   ~~~~
 ~~~~  3. Verificar respaldos                 ~~~~
 ~~~~  4. Migrar datos por SSH                ~~~~
-~~~~  5. Migrar datos por DRIVE              ~~~~
-     ~~~~  6. Configurar rutina de respaldo       ~~~~     
+~~~~  5. Configurar rutina de respaldo       ~~~~
+~~ 1. Activar disco    ~~
+~~ 2. Desactibar disco ~~
+~~ 3. Ajustar hora res ~~
+~~ 4. Configurar Rclone~~
 ~~~~  0. Volver                              ~~~~

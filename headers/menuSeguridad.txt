@@ -1,0 +1,6 @@
+~~~~  1. Inicios de sesion exitosos -Registro- ~~~~
+~~~~  2. Inicios de sesion fallidos -Registro- ~~~~
+~~~~  3. Modificar seguridad IPTABLES          ~~~~
+~~~~  4. Desactivar Reglas                     ~~~~
+~~~~  5. Restaurar Reglas                      ~~~~
+~~~~  0. Salir                                 ~~~~

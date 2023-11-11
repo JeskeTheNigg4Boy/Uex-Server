@@ -1,6 +1,10 @@
-  _   _                   ____            _ 
- | | | |   ___  __  __   / ___|    __ _  | |
- | | | |  / _ \ \ \/ /   \___ \   / _` | | |
- | |_| | |  __/  >  <     ___) | | (_| | | |
-  \___/   \___| /_/\_\   |____/   \__, | |_|
-                                     |_|    
+~~~~  1. Activar SQL    ~~~~
+~~~~  2. Desactivar SQL ~~~~
+~~~~  3. Reiniciar SQL  ~~~~
+~~~~  4. Acceder a SQL  ~~~~
+~~~~  5. Mas informacion~~~~
+~~~~  6. Ver Coneciones ~~~~
+~~~~  7. Cerrar conexion~~~~
+~~~~  8. Importar una BD~~~~
+~~~~  9.   Ajustes web  ~~~~ 
+~~~~  0.     Volver     ~~~~
