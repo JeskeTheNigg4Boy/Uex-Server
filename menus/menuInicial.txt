@@ -2,7 +2,7 @@
 ~~~~~~ 2. Administrar Usuarios  ~~~~~~
 ~~~~~~ 3. Administrar Grupos    ~~~~~~
 ~~~~~~ 4. Administrar Respaldos ~~~~~~
-
+~~~~~~ 5. Apartado Seguridad    ~~~~~~
 
 
 

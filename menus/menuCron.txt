@@ -1,0 +1,8 @@
+~~~~  1. Activar CRON   ~~~~
+~~~  2. Desactivar CRON ~~~~
+~~~  3. Reiniciar CRON  ~~~~
+~~~  4. Mas Informacion ~~~~
+~~~  5. Editar CRON     ~~~~
+~~~  6. Ver Croneadas   ~~~~
+~~~  0. Volver          ~~~~
+
