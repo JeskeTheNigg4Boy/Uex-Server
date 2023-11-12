@@ -3,7 +3,7 @@
 hacer_respaldo(){
 	fecha_actual=$(date +"%Y-%m-%d_%H-%M-%S")
 	nombre_archivo="/var/mysql/DBweb/BaseDeDatos_${fecha_actual}.sql"
-	mysqldump -h localhost -P 3306 -u adminDB -p uexproyecto > "$nombre_archivo" && echo "Backup completado exitosamente" || echo "Error al realizar el backup"
+	mysqldump -h localhost -P 3306 -u AdminDB -p uexproyecto > "$nombre_archivo" && echo "Backup completado exitosamente" || echo "Error al realizar el backup"
 
 }
 hacer_cargado() {
@@ -23,7 +23,7 @@ hacer_cargado() {
     if [[ $opcion =~ ^[0-9]+$ && $opcion -ge 0 && $opcion -lt ${#archivos_sql[@]} ]]; then
         archivo_seleccionado="${archivos_sql[$opcion]}"
 
-        mysql -h localhost -P 3306 -u adminDB -p uexproyecto < "$archivo_seleccionado"
+        mysql -h localhost -P 3306 -u AdminDB -p uexproyecto < "$archivo_seleccionado"
 
         if [ $? -eq 0 ]; then
             echo "Restauración completada. Se utilizó el archivo: $archivo_seleccionado"
@@ -51,7 +51,7 @@ actualizar_horarios() {
     echo "$query1" > "$SQL_FILE"
 
     # Ejecutar la consulta y guardar resultados en un array
-    id_horario_array=($(mysql -u adminDB -p"$MYSQL_ROOT_PASSWORD" -D uexproyecto < "$SQL_FILE" -N))
+    id_horario_array=($(mysql -u AdminDB -p"$MYSQL_ROOT_PASSWORD" -D uexproyecto < "$SQL_FILE" -N))
 
     # Iterar sobre el array de ID_Horario
     for id_horario in "${id_horario_array[@]}"; do
@@ -60,7 +60,7 @@ actualizar_horarios() {
         echo "$query2" > "$SQL_FILE"
 
         # Ejecutar la consulta y guardar resultados en un nuevo array
-        id_reserva_array=($(mysql -u adminDB -p"$MYSQL_ROOT_PASSWORD" -D uexproyecto < "$SQL_FILE" -N))
+        id_reserva_array=($(mysql -u AdminDB -p"$MYSQL_ROOT_PASSWORD" -D uexproyecto < "$SQL_FILE" -N))
 
         # Iterar sobre el array de ID_Reserva
         for id_reserva in "${id_reserva_array[@]}"; do
@@ -69,7 +69,7 @@ actualizar_horarios() {
             echo "$query3" > "$SQL_FILE"
 
             # Ejecutar la consulta de actualización
-            mysql -u adminDB -p"$MYSQL_ROOT_PASSWORD" -D uexproyecto < "$SQL_FILE"
+            mysql -u AdminDB -p"$MYSQL_ROOT_PASSWORD" -D uexproyecto < "$SQL_FILE"
 
             echo "Reserva $id_reserva cancelada."
         done
