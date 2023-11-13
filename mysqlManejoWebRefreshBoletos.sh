@@ -10,7 +10,7 @@ actualizar_horarios() {
     query1="SELECT ID_Horario FROM pertenece_a WHERE Dia_Salida = '$current_date' AND Hora_Salida <= '$current_time';"
     echo "$query1" > "$SQL_FILE"
 
-    id_horario_array=($(mysql -u adminDB -p"$MYSQL_ROOT_PASSWORD" -D uexproyecto < "$SQL_FILE" -N))
+    id_horario_array=($(mysql -u AdminDB -p"$MYSQL_ROOT_PASSWORD" -D uexproyecto < "$SQL_FILE" -N))
 
     for id_horario in "${id_horario_array[@]}"; do
 
